@@ -1,0 +1,25 @@
+.gallery-item__image-container {
+  width: 200px;
+  height: 200px;
+
+  overflow: hidden;
+}
+
+.gallery-item__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  line-height: 100px;
+  text-align: center;
+}
+
+.image__horizontal {
+  width: auto;
+  margin-left: -30%;
+}
+
+.image__vertical {
+  height: auto;
+  margin-top: -30%;
+}

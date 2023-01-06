@@ -1,0 +1,20 @@
+@import '/src/styles/2-helpers/constants';
+
+.filters {
+  width: 300px;
+}
+
+.gallery__container {
+  width: calc(100% - 300px);
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-list__item {
+  list-style: none;
+}

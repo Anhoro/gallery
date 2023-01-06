@@ -1,0 +1,44 @@
+<div class="error"
+     *ngIf="errorMessage">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<form class="filters__form"
+      [formGroup]="filtersForm"
+      (ngSubmit)="onSubmit()">
+  <div class="filters__col">
+    <p class="input__container">
+      <label for="itemsAmount"
+             class="form__label">Amount of items: </label>
+      <select name="itemsAmount"
+              id="itemsAmount"
+              formControlName="itemsAmount"
+              class="form__select"
+              (change)="onSelectOption()">
+        <option *ngFor="let amountItem of amountItemsList" value="{{ amountItem }}">
+          {{ amountItem }}
+        </option>
+      </select>
+    </p>
+
+    <p class="input__container"
+       *ngIf="!errorMessage">Breed:
+      <button class="button__breed"
+              (click)="onToggleCheckboxesAll()">Toggle all</button>
+    </p>
+
+    <p class="input__container"
+       formArrayName="breeds"
+       *ngFor="let breed of breedsFormArray; let i = index">
+      <input type="checkbox"
+             name="breed"
+             id="breed-{{i}}"
+             [formControlName]="i"
+             (change)="onToggleCheckbox()">
+      <label for="breed-{{i}}"
+             class="form__label form__label_checkbox">{{ breeds[i].name }}</label>
+    </p>
+  </div>
+
+
+</form>

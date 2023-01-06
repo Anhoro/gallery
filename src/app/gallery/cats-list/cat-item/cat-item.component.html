@@ -1,0 +1,11 @@
+<div class="gallery-item__image-container">
+  <img [src]="galleryItem.url"
+       (error)="onHandleMissingImage($event)"
+       [ngClass]="getClassByAspectRatio()"
+       width="200"
+       height="200"
+       class="gallery-item__image"
+       alt="                 cat image">
+       <!-- some images could be shifted,
+            so their 'alt' info could be shifted too during rendering -->
+</div>

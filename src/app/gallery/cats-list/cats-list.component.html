@@ -1,0 +1,27 @@
+<app-filters class="filters"></app-filters>
+
+<div *ngIf="isFetching"
+     class="loader__modal">
+  <div class="loader__container">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<div class="gallery__container">
+  <div class="error"
+       *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <ul class="gallery-list"
+      *ngIf="!errorMessage">
+    <li class="gallery-list__item"
+        *ngFor="let galleryItem of cats; let i = 'index + 1'"
+        [li_id]="i"
+        [galleryItem]="galleryItem"
+        app-cat-item>
+    </li>
+  </ul>
+</div>
+

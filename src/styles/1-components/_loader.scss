@@ -1,0 +1,37 @@
+.loader__modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(20,20,20,0.8);
+  color: rgb(245, 222, 179);
+}
+
+.loader__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader__container p {
+  margin: 0 0 0 10px;
+
+  font-size: 32px;
+}
+
+.loader {
+  border: 6px solid $theme;
+  border-top: 6px solid $secondary;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
